@@ -1,20 +1,23 @@
-def linear_search(arr, target):
-    # Your code here
+def linear_search(arr, target): # linear search for a number in list
 
+    for i in range(len(arr)): # loop over list
+
+        if arr[i] == target: # if this loop matches
+
+            return i # return index
 
     return -1   # not found
 
 
-# Write an iterative implementation of Binary Search
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
-    mid = 0
+def binary_search(arr, target): # binary search for a number in list
+    low = 0 # low = index of 0
+    high = len(arr) - 1 # high = index of last value
+    mid = 0 # mid = index of starting point
 
-    while low <= high:
+    while low <= high: # handle if list is empty or item is not found
         mid = (high + low)
         # Check if target is found
-        if arr[mid] < target:
+        if arr[mid] < target: 
             low = mid + 1
         # If target is greater, ignore left half
         elif arr[mid] > target:
@@ -22,5 +25,4 @@ def binary_search(arr, target):
         # If target is smaller, ignore right half
         else:
             return mid
-    # If we reach here, then the element was not found
-    return -1  
+    return -1  # not found
