@@ -17,11 +17,35 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # Loop through your array
+    for value in range(1, len(arr)):
+        temp = arr[value]
+        index = value
+        # Compare each element to its neighbor
+        while index > 0 and temp < arr[index - 1]:
+            # If elements in wrong position (relative to each other, swap them)
+            arr[index] = arr[index - 1]
+            index -= 1
 
+        arr[index] = temp
 
     return arr
 
+
+# # Loop through your array
+#     for item in arr:
+#         count = 0
+#     # Compare each element to its neighbor
+#         if item > arr[count + 1]:
+#             # If elements in wrong position (relative to each other, swap them)
+#             temp = arr[0]
+#             arr[0] = arr[1]
+#             arr[1] = temp
+#         # If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+#         else: 
+#             return bubble_sort(arr)
+
+#     return arr
 '''
 STRETCH: implement the Count Sort function below
 
